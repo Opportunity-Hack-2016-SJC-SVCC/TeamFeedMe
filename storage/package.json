@@ -5,7 +5,8 @@
   "main": "db.js",
   "dependencies": {
     "express": "^4.14.0",
-    "firebase": "^3.4.0"
+    "firebase": "^3.4.0",
+    "geofire": "^4.1.1"
   },
   "devDependencies": {},
   "scripts": {
