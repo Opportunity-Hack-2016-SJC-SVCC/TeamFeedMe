@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Marker Animations</title>
+    <title>FeedMe</title>
     <style>
       html, body {
         height: 100%;
@@ -13,13 +13,13 @@
         height: 100%;
       }
     </style>
-      <script type="text/JavaScript" src="js/jquery-3.1.1.min.js"></script>
+            <script type="text/JavaScript" src="js/jquery-3.1.1.min.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
        <script type="text/JavaScript" language="JavaScript">
            $.ajax({
-              'url': 'http://localhost:3000/meals',
+              'url': 'meals',
               'type': 'GET',
-              'content-Type': 'application/json',
+             'content-Type': 'application/json',
               'dataType': 'json',
               'success': function (result) {
                   showMealData(result);
@@ -30,13 +30,46 @@
                 return false;
               }
           });
+
+          $.ajax({
+             'url': 'meal/requests',
+             'type': 'GET',
+             'content-Type': 'application/json',
+             'dataType': 'json',
+             'success': function (result) {
+                 showRequestData(result);
+             },
+             'error': function (XMLHttpRequest, textStatus, errorThrown) {
+               console.log(XMLHttpRequest.status + ' ' +
+                   XMLHttpRequest.statusText);
+               return false;
+             }
+         });
       </script>
 
   </head>
   <body>
-    <div id="map"></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhE21r_2p8cEzTPHGPWPhRXaY1hGLGTYk&callback=initMap">
-    </script>
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+      <tr height="15%" bgcolor="#2C3E50"> <!--Header-->
+        <td style="padding-left:40px;">
+          <img src="img/feed-me.png" alt="" style="vertical-align:middle"><span style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+                    float:none;padding:30px;font-weight: 700;font-size: 2em;color: #fff;">Feed Me</span>
+        </td>
+      </tr>
+      <tr height="80%"> <!--Body-->
+        <td style="background: #e5e5e5;padding:40px;">
+          <div id="map"></div>
+          <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhE21r_2p8cEzTPHGPWPhRXaY1hGLGTYk&callback=initMap">
+          </script>
+        </td>
+      </tr>
+      <tr height="5%"> <!--Footer-->
+        <td style="background: #233140;color: #fff;font-size: 14px;font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;" align="center">
+          Copyright &copy; FeedMe 2016
+        </td>
+      </tr>
+
+    </table>
   </body>
 </html>

@@ -1,0 +1,32 @@
+Meal Donation
+Paypal Office, 37.376903, -121.921850, vegetarian, 10
+Paypal Office, 37.376664, -121.921618, non-vegetarian,15
+McDonalds, 37.375044, -121.918991,   non-vegetarian,30
+KZ Kitchen Cabinet & Stone, Inc., 37.376451, -121.919779, vegan,5
+Spencer's for Steaks and Chops 37.371571, -121.923060, halal,6
+Spencer's for Steaks and Chops 37.370710, -121.923834, vegetarian,9
+DD's cafe 37.371517, -121.925092, non-vegetarian,18
+Bagel+Street+Cafe, 37.369014, -121.920528, vegan,6
+37.371833, -121.912879, vegetarian,20
+Zone+8+Sports+Bar+%26+Grill, 37.371126, -121.919952, non-vegetarian,4
+Subway,37.370690, -121.916961, non-vegetarian,40
+37.374561, -121.909258, non-vegetarian,30
+37.376100, -121.909349, vegetarian,12
+37.381427, -121.905737, vegetarian,34
+37.376954, -121.904785, vegan,22
+37.377338, -121.905300, vegan,10
+37.372302, -121.911000, halal,6
+37.375192, -121.917244, halal,8
+
+Meal Requests
+37.378963, -121.922734,vegetarian, 1
+37.380737, -121.916997,non-vegetarian, 5
+37.376832, -121.913070,vegan, 1
+37.381352, -121.909949,halal, 2
+37.375631, -121.908222,vegetarian, 4
+37.371621, -121.907884,non-vegetarian, 3
+37.367093, -121.913318,vegan, 1
+37.367741, -121.918843,vegan, 5
+37.371424, -121.925034,halal, 3
+37.373010, -121.929712,non-vegetarian, 5
+37.381152, -121.927277,vegetarian, 8
