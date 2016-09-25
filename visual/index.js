@@ -2,15 +2,6 @@
 // animation. Clicking on the marker will toggle the animation between a BOUNCE
 // animation and no animation.
 
-
-// Multiple Markers
-var markers = [
-    [37.4, -121.92, 'Ankits House', 'Description 1', "FE7569"],
-    [37.3769713, -121.9227678, 'PayPal', 'Description 2', "FFFFFF"],
-    [37.403, -121.9304, 'Cresent Village', 'Description 3', "000000"]
-    //,[33.388414, -111.931782, 'Tempe', 'Description 4','FFF000']
-];
-
 var bounds;
 var map;
 var infoWindow;
@@ -48,7 +39,14 @@ function getRequestData()
     var i =0;
     for(i =0;i<length;i++)
     {
-        addMarkersOnMap(jsonObject.requests[i].location.lat, jsonObject.requests[i].location.lng,'Requestor', "Count="+jsonObject.requests[i].count+" Status="+jsonObject.requests[i].status, 'FE7569');
+        if(jsonObject.requests[i].status == 'pending')
+            {
+        addMarkersOnMap(jsonObject.requests[i].location.lat, jsonObject.requests[i].location.lng,'Requestor', "Count="+jsonObject.requests[i].count+" Status="+jsonObject.requests[i].status, jsonObject.requests[i].count, 'FE7569');
+            }
+        else
+            {
+        addMarkersOnMap(jsonObject.requests[i].location.lat, jsonObject.requests[i].location.lng,'Requestor', "Count="+jsonObject.requests[i].count+" Status="+jsonObject.requests[i].status, jsonObject.requests[i].count, 'AAAAAA');
+            }
     }
     }
     catch(e)
@@ -58,25 +56,25 @@ function getRequestData()
 function getMealData()
 {
     try{
-    var sampleResponse = '{"requests":[{"count":"3","created_on":"1474749729317","id":"1","location":{"lat":"37.279518","lng":"-121.867905"},"status":"completed","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","id":"2","location":{"lat":"37.41118","lng":"-121.927391"},"status":"pending","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","id":"2","location":{"lat":"37.323","lng":"-122.0527"},"status":"pending","updated_on":"1474749729317"}]}';
+    var sampleResponse = '{"meals":[{"count":"3","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.279518","lng":"-121.867905"},"type":"vegan","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.41118","lng":"-121.927391"},"type":"vegetarian","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.323","lng":"-122.0527"},"type":"non-vegetarian","updated_on":"1474749729317"}]}';
     var jsonObject = JSON.parse(sampleResponse);
-    var length = Object.keys(jsonObject.requests).length;
+    var length = Object.keys(jsonObject.meals).length;
     var i =0;
     for(i =0;i<length;i++)
     {
-        addMarkersOnMap(jsonObject.requests[i].location.lat, jsonObject.requests[i].location.lng,'Donator', "Count="+jsonObject.requests[i].count+" Status="+jsonObject.requests[i].status, 'FFF000');
+        addMarkersOnMap(jsonObject.meals[i].location.lat, jsonObject.meals[i].location.lng,'Donator', "Count="+jsonObject.meals[i].count+" Type="+jsonObject.meals[i].type+" Expiry Date="+getDate(jsonObject.meals[i].expiry), jsonObject.meals[i].count, 'FFF000');
     }
     }
     catch(e)
     {alert('An error has occurred: ' + e.message);}
 }
 
-function addMarkersOnMap(latitude, longitude, title, description, color)
+function addMarkersOnMap(latitude, longitude, title, description, count, color)
 {
     try{
     var position = new google.maps.LatLng(latitude, longitude);
     bounds.extend(position);
-    var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
+    var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld="+count+"|" + color,
         new google.maps.Size(21, 34),
         new google.maps.Point(0, 0),
         new google.maps.Point(10, 34));
@@ -105,4 +103,12 @@ function addMarkersOnMap(latitude, longitude, title, description, color)
     }
             catch(e)
     {alert('An error has occurred: ' + e.message);}
+}
+
+function getDate(unix_timestamp)
+{
+    // Create a new JavaScript Date object based on the timestamp
+// multiplied by 1000 so that the argument is in milliseconds, not seconds.
+var date = new Date(unix_timestamp*1000);
+return date;
 }
