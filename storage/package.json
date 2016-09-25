@@ -1,0 +1,27 @@
+{
+  "name": "feedme",
+  "version": "1.0.0",
+  "description": "Feed the needy",
+  "main": "db.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "firebase": "^3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Opportunity-Hack-2016-SJC-SVCC/TeamFeedMe.git"
+  },
+  "keywords": [
+    "FeedMe"
+  ],
+  "author": "Team-FeedMe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Opportunity-Hack-2016-SJC-SVCC/TeamFeedMe/issues"
+  },
+  "homepage": "https://github.com/Opportunity-Hack-2016-SJC-SVCC/TeamFeedMe#readme"
+}

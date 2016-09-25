@@ -1,0 +1,10 @@
+*.cache
+*.class
+*.project
+*.classpath
+*.log
+.settings/
+test-output/
+.idea/
+*.iml
+.DS_Store
