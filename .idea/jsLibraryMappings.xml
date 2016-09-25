@@ -2,5 +2,6 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/alexa" libraries="{TeamFeedMe/alexa/node_modules}" />
+    <file url="file://$PROJECT_DIR$/storage" libraries="{TeamFeedMe/storage/node_modules}" />
   </component>
 </project>
