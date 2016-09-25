@@ -1,0 +1,4 @@
+# Dialogue Interaction
+
+User:       Alexa, open feed me
+Alexa:      "ssml": "<speak> Hi, Welcome to Feed Me. Do you want to Donate or Request </speak>"

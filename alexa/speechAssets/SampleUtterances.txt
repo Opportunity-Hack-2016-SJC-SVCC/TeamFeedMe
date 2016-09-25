@@ -1,0 +1,48 @@
+RequestTypeIntent I want to {RequestTypeItem}
+RequestTypeIntent I want {RequestTypeItem}
+RequestTypeIntent {RequestTypeItem}
+RequestTypeIntent My intent is {RequestTypeItem}
+RequestTypeIntent I will {RequestTypeItem}
+RequestTypeIntent I can {RequestTypeItem}
+
+MealTypeIntent I want to {MealTypeItem}
+MealTypeIntent I want {MealTypeItem}
+MealTypeIntent {MealTypeItem}
+MealTypeIntent My intent is {MealTypeItem}
+MealTypeIntent I will {MealTypeItem}
+MealTypeIntent I can {MealTypeItem}
+MealTypeIntent I want {MealTypeItem} please
+MealTypeIntent Can I have {MealTypeItem} please
+MealTypeIntent Can I have {MealTypeItem}
+MealTypeIntent Can you get {MealTypeItem}
+MealTypeIntent Can you get me {MealTypeItem}
+MealTypeIntent Can you get me {MealTypeItem} please
+MealTypeIntent Can you get {MealTypeItem}
+MealTypeIntent Can you get {MealTypeItem} please
+
+DonateMealCountIntent I have {MealCount} {MealTypeItem} meals
+DonateMealCountIntent I can donate {MealCount} {MealTypeItem} meals
+DonateMealCountIntent Donating {MealCount} {MealTypeItem} meals
+DonateMealCountIntent I can get {MealCount} {MealTypeItem} meals
+
+RequestMealCountIntent I need {MealCount} {MealTypeItem} meals
+RequestMealCountIntent I want {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Requesting {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Can I get {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Can I have {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Can you get {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Can you get me {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Can you get me {MealCount} {MealTypeItem} meals please
+RequestMealCountIntent Can you get {MealCount} {MealTypeItem} meals
+RequestMealCountIntent Can you get {MealCount} {MealTypeItem} please
+
+RequestMealIntent I need {MealTypeItem} meals
+RequestMealIntent I want {MealTypeItem} meals
+RequestMealIntent Requesting {MealTypeItem} meals
+RequestMealIntent Can I get {MealTypeItem} meals
+RequestMealIntent Can I have {MealTypeItem} meals
+RequestMealIntent Can you get {MealTypeItem} meals
+RequestMealIntent Can you get me {MealTypeItem} meals
+RequestMealIntent Can you get me {MealTypeItem} meals please
+RequestMealIntent Can you get {MealTypeItem} meals
+RequestMealIntent Can you get {MealTypeItem} please

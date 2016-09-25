@@ -1,0 +1,93 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.YesIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.NoIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.HelpIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.StopIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.CancelIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.StartOverIntent",
+      "slots": []
+    },
+    {
+      "intent": "RequestTypeIntent",
+      "slots": [
+        {
+          "name": "RequestTypeItem",
+          "type": "LIST_REQ_TYPE"
+        }
+      ]
+    },
+    {
+      "intent": "MealTypeIntent",
+      "slots": [
+        {
+          "name": "MealTypeItem",
+          "type": "LIST_MEAL_TYPE"
+        }
+      ]
+    },
+    {
+      "intent": "RequestMealCountIntent",
+      "slots": [
+        {
+          "name": "MealTypeItem",
+          "type": "LIST_MEAL_TYPE"
+        },
+        {
+          "name": "MealCount",
+          "type": "AMAZON.Number"
+        }
+      ]
+    },
+    {
+      "intent": "DonateMealCountIntent",
+      "slots": [
+        {
+          "name": "MealTypeItem",
+          "type": "LIST_MEAL_TYPE"
+        },
+        {
+          "name": "MealCount",
+          "type": "AMAZON.Number"
+        }
+      ]
+    },
+    {
+      "intent": "RequestMealIntent",
+      "slots": [
+        {
+          "name": "MealTypeItem",
+          "type": "LIST_MEAL_TYPE"
+        }
+      ]
+    },
+    {
+      "intent": "ConfirmIntent",
+      "slots": []
+    },
+    {
+      "intent": "CancelIntent",
+      "slots": []
+    },
+    {
+      "intent": "RestartIntent",
+      "slots": []
+    }
+  ]
+}
