@@ -61,29 +61,39 @@ app.post('/meal/request', function (req, res) {
 
 //Get all the requests.
 app.get('/meal/requests', function (req, res) {
-  getAll('requests',function buildResp(data) {
+  getAll('requests', filterMealRequest, function buildResp(data) {
     res.setHeader("content-type", "application/json")
     res.send(data);
     });
 });
+
+function filterMealRequest(mReq) {
+    return mReq.status === "completed" || mReq.count === "0"
+}
 
 //Get all the meals.
 app.get('/meals',function (req, res) {
-  getAll('meals',function buildResp(data) {
+  getAll('meals', filterMealDonations, function buildResp(data) {
     res.setHeader("content-type", "application/json")
     res.send(data);
     });
 });
 
+function filterMealDonations(mDonation) {
+    return mDonation.count === "0" || mDonation.expiry <= moment().valueOf();
+}
+
 //Returns all data in a path
-function getAll(path,callback) {
+function getAll(path,filter,callback) {
   var rootRef = dbRef.ref(path);
   var data = [];
   rootRef.once('value').then(function(d) {
        d.forEach(function (oneReq) {
             var json = oneReq.exportVal();
             json.id = oneReq.key;
-            data.push(json);
+            if (!filter(json)) {
+                data.push(json);
+            }
        });
        callback(data);
   });
