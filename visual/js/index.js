@@ -23,7 +23,7 @@ function initMap() {
         infoWindow = new google.maps.InfoWindow();
 
         getRequestData();
-        getMealData();
+        //getMealData();
     } catch (e) {
         alert('An error has occurred: ' + e.message);
     }
@@ -53,10 +53,11 @@ function getRequestData()
     {alert('An error has occurred: ' + e.message);}
 }
 
-function getMealData()
+function showMealData(data)
 {
     try{
-    var text = getMealData1();
+    var text = data;
+    alert(JSON.stringify(data));
     var sampleResponse = '{"meals":[{"count":"3","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.279518","lng":"-121.867905"},"type":"vegan","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.41118","lng":"-121.927391"},"type":"vegetarian","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.323","lng":"-122.0527"},"type":"non-vegetarian","updated_on":"1474749729317"}]}';
     var jsonObject = JSON.parse(sampleResponse);
     var length = Object.keys(jsonObject.meals).length;
@@ -87,7 +88,7 @@ function addMarkersOnMap(latitude, longitude, title, description, count, color)
         draggable: true,
         title: title
     });
-    // Allow each marker to have an info window    
+    // Allow each marker to have an info window
     google.maps.event.addListener(marker, 'click', (function(marker,i) {
         return function() {
             infoWindow.setContent(description);
