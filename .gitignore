@@ -6,9 +6,17 @@
 .settings/
 test-output/
 .idea/
+.idea/jsLibraryMappings.xml
 *.iml
 .DS_Store
-# This file contains config and other constants
 alexa/constants.js
+storage/node_modules/.bin/
+
+# Config Settings and Util Libraries
+util.js
+config.js
+alexa/config.js
+alexa/util.js
+
+# Any Zip packages created during bundling
 *.zip
-.idea/jsLibraryMappings.xml

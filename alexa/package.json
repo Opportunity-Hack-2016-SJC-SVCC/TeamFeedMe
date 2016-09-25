@@ -1,0 +1,36 @@
+{
+  "name": "feed-me",
+  "version": "1.0.0",
+  "description": "Feed-Me Food Conservation and Distribution App",
+  "main": "index.js",
+  "contributors": [
+    "Vasu Jain <vasu.jain@live.in>"
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.4.7",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.74.0",
+    "twilio": "^2.9.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:Opportunity-Hack-2016-SJC-SVCC/TeamFeedMe.git"
+  },
+  "keywords": [
+    "Alexa",
+    "skill",
+    "sdk"
+  ],
+  "author": "Vasu Jain",
+  "bugs": {
+    "url": "https://github.com/Opportunity-Hack-2016-SJC-SVCC/TeamFeedMe/issues"
+  },
+  "homepage": "https://github.com/Opportunity-Hack-2016-SJC-SVCC/TeamFeedMe#readme",
+  "license": "UNLICENSED"
+}
