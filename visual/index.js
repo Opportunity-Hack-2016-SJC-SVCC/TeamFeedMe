@@ -56,6 +56,7 @@ function getRequestData()
 function getMealData()
 {
     try{
+    var text = getMealData1();
     var sampleResponse = '{"meals":[{"count":"3","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.279518","lng":"-121.867905"},"type":"vegan","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.41118","lng":"-121.927391"},"type":"vegetarian","updated_on":"1474749729317"},{"count":"5","created_on":"1474749729317","expiry":"1474784598","location":{"lat":"37.323","lng":"-122.0527"},"type":"non-vegetarian","updated_on":"1474749729317"}]}';
     var jsonObject = JSON.parse(sampleResponse);
     var length = Object.keys(jsonObject.meals).length;
