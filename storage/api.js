@@ -4,6 +4,8 @@ var firebase = require("firebase");
 var GeoFire = require("geofire");
 var moment = require('moment');
 var bodyParser = require('body-parser');
+var smsClient = require('twilio')('ACe171ce07d01a6a7def799a981ff86cf6','5c21deed2bceac0d9a84d3df1e52b2b3');
+var twilioFromNumber = '+16508177432';
 
 var app = express();
 app.use(bodyParser.json());
@@ -51,6 +53,7 @@ app.post('/meal/donate', function (req, res) {
 
 //Make a request.
 app.post('/meal/request', function (req, res) {
+
   var reqData = req.body;
   var mReqJson = {
       "count":reqData.count,
@@ -181,6 +184,20 @@ function getAll(path,filter,callback) {
        callback(data);
   });
 }
+
+function sendSMS(to, message) {
+  smsClient.messages.create({
+    body: message,
+    to: to,
+    from: twilioFromNumber
+  }, function(err, data) {
+    if (err) {
+      console.error('Could not send sms');
+      console.error(err);
+    }
+  });
+};
+//sendSMS('+16508393879','Hi there!!!')
 
 app.listen(3000, function () {
   console.log('App fired up on port 3000!');
