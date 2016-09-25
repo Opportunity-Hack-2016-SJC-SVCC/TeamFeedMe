@@ -1,0 +1,31 @@
+{
+  "session": {
+    "sessionId": "SessionId",
+    "application": {
+      "applicationId": "amzn1.ask.skill"
+    },
+    "attributes": {
+      "STATE": "_STARTMODE"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.Q"
+    },
+    "new": false
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.289c247d-886a-4392-ab30-db3889bad843",
+    "locale": "en-US",
+    "timestamp": "2016-09-25T09:11:46Z",
+    "intent": {
+      "name": "RequestTypeIntent",
+      "slots": {
+        "RequestTypeItem": {
+          "name": "RequestTypeItem",
+          "value": "donate"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -20,10 +20,12 @@ MealTypeIntent Can you get me {MealTypeItem} please
 MealTypeIntent Can you get {MealTypeItem}
 MealTypeIntent Can you get {MealTypeItem} please
 
-DonateMealCountIntent I have {MealCount} {MealTypeItem} meals
-DonateMealCountIntent I can donate {MealCount} {MealTypeItem} meals
-DonateMealCountIntent Donating {MealCount} {MealTypeItem} meals
-DonateMealCountIntent I can get {MealCount} {MealTypeItem} meals
+DonateMealCountIntent I have {MealCount} meals
+DonateMealCountIntent I can donate {MealCount} meals
+DonateMealCountIntent Donating {MealCount} meals
+DonateMealCountIntent I can get {MealCount} meals
+DonateMealCountIntent {MealCount} meals
+DonateMealCountIntent {MealCount}
 
 RequestMealCountIntent I need {MealCount} {MealTypeItem} meals
 RequestMealCountIntent I want {MealCount} {MealTypeItem} meals

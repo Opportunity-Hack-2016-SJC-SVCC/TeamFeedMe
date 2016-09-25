@@ -59,10 +59,6 @@
       "intent": "DonateMealCountIntent",
       "slots": [
         {
-          "name": "MealTypeItem",
-          "type": "LIST_MEAL_TYPE"
-        },
-        {
           "name": "MealCount",
           "type": "AMAZON.Number"
         }

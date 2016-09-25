@@ -1,0 +1,36 @@
+{
+  "session": {
+    "sessionId": "SessionId.1bd797e6-******",
+    "application": {
+      "applicationId": "amzn1.ask.skill.********"
+    },
+    "attributes": {
+      "currentNode": 2,
+      "STATE": "_STARTMODE"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.Q"
+    },
+    "new": false
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.40ffd291-3dad-413c-b035-e75528726dea",
+    "locale": "en-US",
+    "timestamp": "2016-09-25T10:10:56Z",
+    "intent": {
+      "name": "DonateMealCountIntent",
+      "slots": {
+        "MealTypeItem": {
+          "name": "MealTypeItem",
+          "value": "vegetarian"
+        },
+        "MealCount": {
+          "name": "MealCount",
+          "value": "5"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
