@@ -36,16 +36,9 @@ app.post('/meal/donate', function (req, res) {
          "lat":reqData.location.lat,
          "lng":reqData.location.lng
       },
-      "type":reqData.type === undefined?"any":reqData.type,
-      "created_on":moment().valueOf(),
-      "updated_on":moment().valueOf()
-   };
-  var mDbData = dbRef.ref('meals').push(mReqJson);
-  //Also set it in geoFire schema
-  geoFireMealsDbRef.set(mDbData.key, [reqData.location.lat, reqData.location.lng]);
-
-  fulfillDonationRequest(mReqJson);
-
+      "type":reqData.type === undefined?"any":reqData.type
+  };
+  var mDbData = saveDonationRequest(mReqJson);
   mReqJson.id = mDbData.key;
   res.setHeader("content-type", "application/json")
   res.send(mReqJson);
@@ -53,7 +46,6 @@ app.post('/meal/donate', function (req, res) {
 
 //Make a request.
 app.post('/meal/request', function (req, res) {
-
   var reqData = req.body;
   var mReqJson = {
       "count":reqData.count,
@@ -61,21 +53,12 @@ app.post('/meal/request', function (req, res) {
          "lat":reqData.location.lat,
          "lng":reqData.location.lng
       },
-      "status":"pending",
+
       "type":reqData.type === undefined?"any":reqData.type,
-      "contact_no":reqData.contact_no === undefined?"":reqData.contact_no,
-      "created_on":moment().valueOf(),
-      "updated_on":moment().valueOf()
+      "contact_no":reqData.contact_no === undefined?"":reqData.contact_no
    };
-  var mDbData = dbRef.ref('requests').push(mReqJson);
-
-  //Also set it in geoFire schema
-  geoFireReqDbRef.set(mDbData.key, [reqData.location.lat, reqData.location.lng]);
-
+  var mDbData = saveMealRequest(mReqJson);
   mReqJson.id = mDbData.key;
-
-  fulfillMealRequest(mReqJson);
-
   res.setHeader("content-type", "application/json")
   res.send(mReqJson);
 });
@@ -97,12 +80,41 @@ app.get('/meals',function (req, res) {
     });
 });
 
+
+function saveDonationRequest(reqJson) {
+  reqJson.created_on = moment().valueOf();
+  reqJson.updated_on = moment().valueOf();
+  reqJson.type = (reqJson.type === undefined)?"any":reqJson.type;
+  reqJson.status= "pending";
+  var mDbData = dbRef.ref('meals').push(reqJson);
+  //Also set it in geoFire schema
+  geoFireMealsDbRef.set(mDbData.key, [reqJson.location.lat, reqJson.location.lng]);
+
+  fulfillDonationRequest(reqJson);
+  return mDbData;
+}
+
+
+function saveMealRequest(reqJson) {
+  reqJson.created_on = moment().valueOf();
+  reqJson.updated_on = moment().valueOf();
+  reqJson.type = (reqJson.type === undefined)?"any":reqJson.type;
+  reqJson.status= "pending";
+  var mDbData = dbRef.ref('requests').push(reqJson);
+
+  //Also set it in geoFire schema
+  geoFireReqDbRef.set(mDbData.key, [reqJson.location.lat, reqJson.location.lng]);
+
+  fulfillMealRequest(reqJson);
+  return mDbData;
+}
+
 function filterMealDonations(mDonation) {
     return mDonation.count === "0" || mDonation.expiry <= moment().valueOf();
 }
 
 function filterMealRequest(mReq) {
-    return mReq.status === "completed" || mReq.count === "0"
+    return mReq.count === "0";
 }
 
 //Find the donations in 5 mile radius for the request and adjust the data.
