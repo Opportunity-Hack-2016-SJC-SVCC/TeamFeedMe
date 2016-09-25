@@ -48,3 +48,8 @@ RequestMealIntent Can you get me {MealTypeItem} meals
 RequestMealIntent Can you get me {MealTypeItem} meals please
 RequestMealIntent Can you get {MealTypeItem} meals
 RequestMealIntent Can you get {MealTypeItem} please
+
+ConfirmIntent {ConfirmItem}
+ConfirmIntent {ConfirmItem}
+ConfirmIntent I {ConfirmItem}
+ConfirmIntent we {ConfirmItem}

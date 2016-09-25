@@ -75,7 +75,12 @@
     },
     {
       "intent": "ConfirmIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "ConfirmItem",
+          "type": "LIST_CONFIRM_ITEM"
+        }
+      ]
     },
     {
       "intent": "CancelIntent",
